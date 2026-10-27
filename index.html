@@ -1,0 +1,582 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#172b3c">
+    <title>Portal Educativo | Resistores e Lei de Ohm</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+<header class="topbar">
+    <a href="#inicio" class="brand">
+        <span class="brand-icon">Ω</span>
+        <span>
+            <strong>Portal Educativo</strong>
+            <small>Conhecimento em um só lugar</small>
+        </span>
+    </a>
+
+    <form class="search-form" id="searchForm" role="search">
+        <input
+            type="search"
+            id="searchInput"
+            placeholder="Pesquisar conteúdo..."
+            aria-label="Pesquisar conteúdo"
+        >
+        <button type="submit" aria-label="Pesquisar">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="10.8" cy="10.8" r="6.8"></circle>
+                <path d="m16 16 4.5 4.5"></path>
+            </svg>
+        </button>
+    </form>
+
+    <button class="login-button" id="loginButton">Entrar ↗</button>
+    <button class="mobile-menu" id="mobileMenu" aria-label="Abrir menu"
+        aria-expanded="false">☰</button>
+</header>
+
+<div class="layout">
+
+    <aside class="sidebar" id="sidebar">
+        <p class="sidebar-heading">NAVEGAÇÃO</p>
+
+        <nav class="menu" aria-label="Menu principal">
+            <button class="nav-item active" data-target="inicio">
+                <span>Ω</span> Resistores e Lei de Ohm
+            </button>
+
+            <p class="nav-section">OUTROS CONTEÚDOS</p>
+
+            <div id="futureMenu"></div>
+        </nav>
+
+        <div class="sidebar-note">
+            <span>✦</span>
+            <strong>Seu espaço de aprendizagem</strong>
+            <p>Adicione novos conteúdos aos espaços disponíveis sempre que precisar.</p>
+        </div>
+    </aside>
+
+    <main class="main-content" id="inicio">
+
+        <div class="breadcrumb">
+            Portal Educativo <span>/</span> Conteúdos
+        </div>
+
+        <section class="hero">
+            <div>
+                <span class="eyebrow">MATERIAL DE ESTUDO</span>
+                <h1>Resistores e<br><span>Lei de Ohm</span></h1>
+                <p>
+                    Aprenda sobre resistência elétrica, as Leis de Ohm,
+                    exemplos práticos e aplicações industriais em um
+                    único lugar.
+                </p>
+                <a href="#importancia" class="primary-button">
+                    Começar a estudar ↓
+                </a>
+            </div>
+
+            <div class="hero-art" aria-hidden="true">
+                <div class="orbit orbit-one"></div>
+                <div class="orbit orbit-two"></div>
+                <div class="resistor">
+                    <i></i><b></b><i></i><b></b><i></i>
+                </div>
+                <span class="ohm">Ω</span>
+                <span class="volt">V = R × I</span>
+            </div>
+        </section>
+
+        <div class="content-heading">
+            <div>
+                <span class="eyebrow">CONTEÚDO COMPLETO</span>
+                <h2>Guia de estudos</h2>
+            </div>
+            <span class="content-badge">10 tópicos</span>
+        </div>
+
+        <div id="searchResults" class="search-results" hidden></div>
+
+        <div id="studyContent">
+
+            <section class="study-section" id="importancia" data-title="Importância">
+                <span class="section-number">01</span>
+                <h2>Importância dos resistores e das Leis de Ohm</h2>
+                <p>
+                    Os resistores e as Leis de Ohm são fundamentais na
+                    eletroeletrônica, pois permitem controlar a corrente
+                    elétrica, dividir a tensão e proteger componentes
+                    contra danos.
+                </p>
+                <p>
+                    Os resistores transformam parte da energia elétrica
+                    em calor por meio do Efeito Joule. A Primeira Lei de
+                    Ohm relaciona tensão, corrente e resistência. A
+                    Segunda Lei mostra como a resistência depende do
+                    material, do comprimento e da área do condutor.
+                </p>
+            </section>
+
+            <section class="study-section" id="resistores" data-title="O que são resistores">
+                <span class="section-number">02</span>
+                <h2>O que são resistores?</h2>
+                <p>
+                    Um resistor é um componente eletrônico que oferece
+                    resistência à passagem da corrente elétrica. Sua
+                    unidade de medida é o ohm (Ω).
+                </p>
+                <p>
+                    Ele controla a intensidade da corrente e ajuda a
+                    proteger componentes, como lâmpadas e chips. Durante
+                    seu funcionamento, parte da energia elétrica é
+                    transformada em calor pelo Efeito Joule.
+                </p>
+
+                <div class="info-box">
+                    <strong>Analogia:</strong>
+                    podemos comparar um resistor a um estreitamento
+                    em um cano de água, que dificulta o fluxo.
+                </div>
+
+                <h3>Características dos resistores</h3>
+                <div class="feature-grid">
+                    <article class="feature-card">
+                        <span>Ω</span>
+                        <h3>Resistência nominal</h3>
+                        <p>Valor da resistência, medido em ohms.</p>
+                    </article>
+                    <article class="feature-card">
+                        <span>±</span>
+                        <h3>Tolerância</h3>
+                        <p>Margem de variação do valor nominal.</p>
+                    </article>
+                    <article class="feature-card">
+                        <span>W</span>
+                        <h3>Potência</h3>
+                        <p>Capacidade de dissipar calor, medida em watts.</p>
+                    </article>
+                    <article class="feature-card">
+                        <span>°C</span>
+                        <h3>Coeficiente térmico</h3>
+                        <p>Indica como a resistência varia com a temperatura.</p>
+                    </article>
+                </div>
+
+                <p>
+                    Os resistores podem ser fabricados com película de
+                    carbono, filme metálico, fio de nicromo ou tecnologia
+                    SMD. Nos resistores tradicionais, as faixas coloridas
+                    indicam a resistência e a tolerância.
+                </p>
+
+                <h3>Classificação dos resistores</h3>
+                <ul>
+                    <li><strong>Fixos:</strong> possuem valor de resistência nominal fixo.</li>
+                    <li><strong>Variáveis:</strong> permitem ajustar a resistência, como os potenciômetros.</li>
+                    <li><strong>Sensíveis a estímulos:</strong> variam sua resistência conforme luz, temperatura ou outras condições.</li>
+                    <li><strong>PTH:</strong> possuem terminais que atravessam a placa de circuito.</li>
+                    <li><strong>SMD:</strong> são soldados diretamente na superfície da placa.</li>
+                </ul>
+            </section>
+
+            <section class="study-section" id="lei1" data-title="Primeira Lei de Ohm">
+                <span class="section-number">03</span>
+                <h2>Primeira Lei de Ohm</h2>
+                <p>
+                    Formulada pelo físico Georg Simon Ohm, a primeira lei
+                    relaciona tensão elétrica, corrente e resistência.
+                    Ela é válida para condutores ôhmicos sob temperatura
+                    constante.
+                </p>
+
+                <div class="formula-card">
+                    <span>FÓRMULA DA PRIMEIRA LEI</span>
+                    <strong>V = R × I</strong>
+                    <p>V = tensão · R = resistência · I = corrente</p>
+                </div>
+
+                <ul>
+                    <li>Com resistência constante, aumentar a tensão aumenta a corrente.</li>
+                    <li>Com tensão constante, aumentar a resistência diminui a corrente.</li>
+                </ul>
+
+                <h3>Exemplo: proteção de um LED</h3>
+                <p>
+                    Um LED funciona com 2 V e consome 0,02 A, mas está
+                    conectado a uma bateria de 9 V. É necessário utilizar
+                    um resistor para limitar a corrente.
+                </p>
+
+                <div class="calculation">
+                    <p>Tensão no resistor: 9 − 2 = 7 V</p>
+                    <p>Resistência: R = V / I</p>
+                    <strong>R = 7 / 0,02 = 350 Ω</strong>
+                </div>
+            </section>
+
+            <section class="study-section" id="lei2" data-title="Segunda Lei de Ohm">
+                <span class="section-number">04</span>
+                <h2>Segunda Lei de Ohm</h2>
+                <p>
+                    A segunda lei explica como a resistência elétrica
+                    depende do material e das dimensões do condutor.
+                </p>
+
+                <div class="formula-card purple">
+                    <span>FÓRMULA DA SEGUNDA LEI</span>
+                    <strong>R = ρ × L / A</strong>
+                    <p>ρ = resistividade · L = comprimento · A = área transversal</p>
+                </div>
+
+                <ul>
+                    <li>Quanto maior o comprimento do fio, maior a resistência.</li>
+                    <li>Quanto maior a área da seção transversal, menor a resistência.</li>
+                    <li>O material utilizado influencia a resistividade.</li>
+                </ul>
+
+                <h3>Materiais ôhmicos e não ôhmicos</h3>
+                <p>
+                    Materiais ôhmicos mantêm a resistência constante
+                    quando a temperatura permanece constante. Nos
+                    materiais não ôhmicos, a relação entre tensão e
+                    corrente não é proporcional em determinadas condições.
+                </p>
+                <p>
+                    O cobre e o alumínio possuem baixa resistividade e
+                    conduzem bem a eletricidade. Materiais de maior
+                    resistividade podem ser utilizados em elementos
+                    de aquecimento.
+                </p>
+            </section>
+
+            <section class="study-section" id="exemplos" data-title="Exemplos práticos">
+                <span class="section-number">05</span>
+                <h2>Exemplos práticos</h2>
+
+                <div class="example-card">
+                    <h3>LEDs</h3>
+                    <p>
+                        Resistores limitam a corrente elétrica e ajudam
+                        a evitar danos aos LEDs.
+                    </p>
+                </div>
+
+                <div class="example-card">
+                    <h3>Chuveiro elétrico</h3>
+                    <p>
+                        A resistência elétrica do elemento de aquecimento
+                        participa do controle do aquecimento da água.
+                        No exemplo do documento, mudar da posição verão
+                        para inverno diminui a resistência e aumenta
+                        a corrente.
+                    </p>
+                </div>
+
+                <div class="example-card">
+                    <h3>LDR — sensor de luz</h3>
+                    <p>
+                        A resistência do LDR varia conforme a iluminação.
+                        Ele pode ser usado em sistemas que ligam ou
+                        desligam automaticamente as lâmpadas.
+                    </p>
+                </div>
+
+                <div class="example-card">
+                    <h3>Potenciômetro</h3>
+                    <p>
+                        É um resistor variável utilizado, por exemplo,
+                        para controlar o volume de aparelhos de som.
+                    </p>
+                </div>
+
+                <div class="example-card">
+                    <h3>Resistores SMD</h3>
+                    <p>
+                        São componentes compactos presentes em placas
+                        eletrônicas de carregadores de celulares e
+                        outros equipamentos.
+                    </p>
+                </div>
+            </section>
+
+            <section class="study-section" id="industria" data-title="Aplicações industriais">
+                <span class="section-number">06</span>
+                <h2>Aplicações industriais</h2>
+
+                <div class="example-card">
+                    <h3>Automação e Primeira Lei de Ohm</h3>
+                    <p>
+                        Em sistemas industriais, uma malha de corrente
+                        de 4 a 20 mA pode transmitir informações de
+                        sensores para painéis de controle. Com um
+                        resistor de precisão de 250 Ω e uma corrente
+                        de 20 mA, obtém-se uma tensão de 5 V.
+                    </p>
+                    <div class="calculation">V = 250 × 0,020 = 5 V</div>
+                </div>
+
+                <div class="example-card">
+                    <h3>Dimensionamento de cabos</h3>
+                    <p>
+                        A Segunda Lei de Ohm auxilia na escolha de cabos
+                        e barramentos, considerando comprimento, área
+                        transversal e material, para reduzir perdas e
+                        evitar superaquecimento.
+                    </p>
+                </div>
+
+                <div class="example-card">
+                    <h3>Resistores de potência</h3>
+                    <p>
+                        Utilizados na frenagem de motores industriais,
+                        guindastes e pontes rolantes, dissipam energia
+                        elétrica em forma de calor.
+                    </p>
+                </div>
+
+                <div class="example-card">
+                    <h3>Resistores de aterramento de neutro</h3>
+                    <p>
+                        Instalados em subestações para limitar correntes
+                        durante determinadas falhas elétricas, ajudando
+                        a proteger equipamentos e instalações.
+                    </p>
+                </div>
+
+                <div class="example-card">
+                    <h3>Sensores RTD e termistores</h3>
+                    <p>
+                        Utilizados para monitorar a temperatura de
+                        máquinas, caldeiras e tubulações. O PT100
+                        apresenta resistência de 100 Ω a 0 °C.
+                    </p>
+                </div>
+            </section>
+
+            <section class="study-section" id="curiosidades" data-title="Curiosidades">
+                <span class="section-number">07</span>
+                <h2>Curiosidades</h2>
+
+                <ol class="fact-list">
+                    <li>
+                        <strong>O reconhecimento de Ohm:</strong>
+                        suas ideias enfrentaram resistência de parte
+                        da comunidade científica antes de receberem
+                        reconhecimento.
+                    </li>
+                    <li>
+                        <strong>Sensores de luz:</strong>
+                        os LDRs identificam mudanças na iluminação e
+                        podem ser usados em sistemas automáticos.
+                    </li>
+                    <li>
+                        <strong>Grafite do lápis:</strong>
+                        o grafite conduz eletricidade e apresenta
+                        resistência elétrica.
+                    </li>
+                    <li>
+                        <strong>Computador ENIAC:</strong>
+                        um dos primeiros computadores de uso geral
+                        utilizava milhares de resistores e produzia
+                        muito calor.
+                    </li>
+                    <li>
+                        <strong>Lâmpadas incandescentes:</strong>
+                        a resistência do filamento aumenta quando ele
+                        esquenta.
+                    </li>
+                    <li>
+                        <strong>Resistores microscópicos:</strong>
+                        componentes muito pequenos são utilizados
+                        em celulares e computadores.
+                    </li>
+                </ol>
+            </section>
+
+            <section class="study-section" id="resumo" data-title="Resumo para estudar">
+                <span class="section-number">08</span>
+                <h2>Resumo para estudar</h2>
+
+                <h3>Resistores</h3>
+                <p>
+                    São componentes que oferecem resistência à corrente
+                    elétrica. Controlam a corrente, dividem a tensão,
+                    protegem componentes e transformam parte da energia
+                    elétrica em calor pelo Efeito Joule. Podem ser fixos,
+                    variáveis ou sensíveis a estímulos, além de modelos
+                    PTH e SMD.
+                </p>
+
+                <h3>Leis de Ohm</h3>
+                <p>
+                    A Primeira Lei relaciona tensão, corrente e
+                    resistência. A Segunda Lei relaciona resistência,
+                    resistividade, comprimento e área transversal do
+                    condutor. As duas são fundamentais para compreender
+                    circuitos e desenvolver instalações elétricas
+                    seguras e eficientes.
+                </p>
+            </section>
+
+            <section class="study-section" id="quiz" data-title="Quiz de revisão">
+                <span class="section-number">09</span>
+                <h2>Quiz de revisão</h2>
+                <p>Teste seus conhecimentos sobre o material estudado.</p>
+
+                <form id="quizForm">
+                    <fieldset class="question">
+                        <legend>1. Qual é a principal função de um resistor?</legend>
+                        <label><input type="radio" name="q1" value="a"> Controlar a corrente elétrica.</label>
+                        <label><input type="radio" name="q1" value="b"> Produzir energia elétrica.</label>
+                        <label><input type="radio" name="q1" value="c"> Armazenar cargas permanentemente.</label>
+                    </fieldset>
+
+                    <fieldset class="question">
+                        <legend>2. Qual é a unidade de resistência elétrica?</legend>
+                        <label><input type="radio" name="q2" value="a"> Volt (V).</label>
+                        <label><input type="radio" name="q2" value="b"> Ampere (A).</label>
+                        <label><input type="radio" name="q2" value="c"> Ohm (Ω).</label>
+                    </fieldset>
+
+                    <fieldset class="question">
+                        <legend>3. Qual é a fórmula da Primeira Lei de Ohm?</legend>
+                        <label><input type="radio" name="q3" value="a"> V = R × I.</label>
+                        <label><input type="radio" name="q3" value="b"> R = ρ × L / A.</label>
+                        <label><input type="radio" name="q3" value="c"> I = V × R.</label>
+                    </fieldset>
+
+                    <fieldset class="question">
+                        <legend>4. Se o comprimento do fio aumenta, mantendo o material e a área, o que acontece com a resistência?</legend>
+                        <label><input type="radio" name="q4" value="a"> Diminui.</label>
+                        <label><input type="radio" name="q4" value="b"> Aumenta.</label>
+                        <label><input type="radio" name="q4" value="c"> Fica sempre igual.</label>
+                    </fieldset>
+
+                    <fieldset class="question">
+                        <legend>5. Qual componente pode variar sua resistência conforme a luz?</legend>
+                        <label><input type="radio" name="q5" value="a"> Potenciômetro.</label>
+                        <label><input type="radio" name="q5" value="b"> LDR.</label>
+                        <label><input type="radio" name="q5" value="c"> Resistor fixo.</label>
+                    </fieldset>
+
+                    <fieldset class="question">
+                        <legend>6. Mantendo a resistência constante, o aumento da tensão aumenta a corrente?</legend>
+                        <label><input type="radio" name="q6" value="a"> Verdadeiro.</label>
+                        <label><input type="radio" name="q6" value="b"> Falso.</label>
+                    </fieldset>
+
+                    <fieldset class="question">
+                        <legend>7. Um fio mais grosso tem maior resistência que um fio mais fino do mesmo material e comprimento?</legend>
+                        <label><input type="radio" name="q7" value="a"> Verdadeiro.</label>
+                        <label><input type="radio" name="q7" value="b"> Falso.</label>
+                    </fieldset>
+
+                    <fieldset class="question">
+                        <legend>8. Qual é a corrente de um circuito com tensão de 12 V e resistência de 4 Ω?</legend>
+                        <label><input type="radio" name="q8" value="a"> 3 A.</label>
+                        <label><input type="radio" name="q8" value="b"> 48 A.</label>
+                        <label><input type="radio" name="q8" value="c"> 0,33 A.</label>
+                    </fieldset>
+
+                    <fieldset class="question">
+                        <legend>9. Qual componente pode ajudar a acender automaticamente uma lâmpada quando escurece?</legend>
+                        <label><input type="radio" name="q9" value="a"> LDR.</label>
+                        <label><input type="radio" name="q9" value="b"> Resistor fixo comum.</label>
+                        <label><input type="radio" name="q9" value="c"> Resistor de potência.</label>
+                    </fieldset>
+
+                    <fieldset class="question">
+                        <legend>10. Qual é uma aplicação do sensor PT100?</legend>
+                        <label><input type="radio" name="q10" value="a"> Regular o volume de caixas de som.</label>
+                        <label><input type="radio" name="q10" value="b"> Medir temperatura em processos industriais.</label>
+                        <label><input type="radio" name="q10" value="c"> Armazenar energia elétrica.</label>
+                    </fieldset>
+
+                    <button type="submit" class="primary-button">
+                        Corrigir respostas
+                    </button>
+                    <button type="reset" class="secondary-button">
+                        Refazer quiz
+                    </button>
+                </form>
+
+                <div id="quizResult" class="quiz-result" hidden></div>
+            </section>
+
+        </div>
+
+        <div class="page-bottom">
+            <span>Portal Educativo · Material de estudo</span>
+            <button id="backTop">Voltar ao topo ↑</button>
+        </div>
+    </main>
+</div>
+
+<footer class="footer" id="rodape">
+    <div class="footer-main">
+        <div>
+            <a href="#inicio" class="brand footer-brand">
+                <span class="brand-icon">Ω</span>
+                <span><strong>Portal Educativo</strong></span>
+            </a>
+            <p>
+                Um espaço para organizar, consultar e compartilhar
+                conhecimentos de forma simples.
+            </p>
+        </div>
+
+        <div>
+            <h3>Mapa do site</h3>
+            <a href="#inicio">Resistores e Lei de Ohm</a>
+            <a href="#importancia">Importância</a>
+            <a href="#lei1">Primeira Lei de Ohm</a>
+            <a href="#lei2">Segunda Lei de Ohm</a>
+            <a href="#exemplos">Exemplos práticos</a>
+            <a href="#quiz">Quiz de revisão</a>
+        </div>
+
+        <div>
+            <h3>Contatos</h3>
+            <p>Responsável pelo portal: <span>Márcio e kauany</span></p>
+            <p>E-mail: <span>pedala_robinho@gmail.com</span></p>
+            <p>Instituição: <span>Senai</span></p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <span>© <span id="currentYear"></span> Portal Educativo</span>
+        <a href="#inicio">Voltar ao início ↑</a>
+    </div>
+</footer>
+
+<dialog id="loginDialog" class="login-dialog">
+    <form id="loginForm">
+        <button type="button" id="closeLogin" class="dialog-close"
+            aria-label="Fechar">×</button>
+        <span class="brand-icon">Ω</span>
+        <h2>Entrar no portal</h2>
+        <p>Esta é uma janela de demonstração.</p>
+
+        <label for="loginEmail">E-mail</label>
+        <input type="email" id="loginEmail" required
+            placeholder="seu@email.com">
+
+        <label for="loginPassword">Senha</label>
+        <input type="password" id="loginPassword" required
+            placeholder="Digite sua senha">
+
+        <button class="primary-button" type="submit">Entrar</button>
+        <p id="loginMessage" class="login-message" aria-live="polite"></p>
+    </form>
+</dialog>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+</body>
+</html>
