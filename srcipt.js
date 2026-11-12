@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // MENSAGENS TEMPORÁRIAS
     function showToast(message) {
+        if (!toast) return;
         toast.textContent = message;
         toast.hidden = false;
 
@@ -304,9 +305,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // ANO AUTOMÁTICO NO RODAPÉ
-    document.getElementById("currentYear").textContent =
-        new Date().getFullYear();
+    const yearElement = document.getElementById("currentYear");
+    if (yearElement) yearElement.textContent = new Date().getFullYear();
 
-    // NOTA INICIAL
-    toast.hidden = true;
+    // ESTADO INICIAL DA NOTIFICAÇÃO
+    if (toast) toast.hidden = true;
 });
