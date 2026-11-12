@@ -250,58 +250,58 @@ document.addEventListener("DOMContentLoaded", function () {
         q10: "b"
     };
 
-    quizForm.addEventListener("submit", function (event) {
-        event.preventDefault();
+    if (quizForm && quizResult) {
+        quizForm.addEventListener("submit", function (event) {
+            event.preventDefault();
 
-        let score = 0;
-        let unanswered = 0;
+            let score = 0;
+            let unanswered = 0;
 
-        Object.keys(answerKey).forEach(function (question) {
-            const selected = quizForm.querySelector(
-                `input[name="${question}"]:checked`
-            );
+            Object.keys(answerKey).forEach(function (question) {
+                const selected = quizForm.querySelector(
+                    `input[name="${question}"]:checked`
+                );
 
-            if (!selected) {
-                unanswered++;
-            } else if (selected.value === answerKey[question]) {
-                score++;
+                if (!selected) {
+                    unanswered++;
+                } else if (selected.value === answerKey[question]) {
+                    score++;
+                }
+            });
+
+            // A mensagem aparece na própria página, mesmo quando faltam respostas.
+            if (unanswered > 0) {
+                quizResult.innerHTML = `<h3>Quiz incompleto</h3>
+                    <p>Responda às ${unanswered} questão(ões) restantes para receber sua nota.</p>`;
+                quizResult.hidden = false;
+                quizResult.scrollIntoView({ behavior: "smooth", block: "center" });
+                return;
             }
+
+            let message;
+            if (score >= 8) {
+                message = "Excelente! Você compreendeu bem o conteúdo.";
+            } else if (score >= 5) {
+                message = "Bom trabalho! Revise os tópicos e tente novamente.";
+            } else {
+                message = "Continue estudando e tente novamente após a revisão.";
+            }
+
+            const total = Object.keys(answerKey).length;
+            quizResult.innerHTML = `
+                <h3>Nota final: ${score.toFixed(1).replace(".", ",")} / ${total}</h3>
+                <p>Você acertou ${score} de ${total} questões (${Math.round(score / total * 100)}%).</p>
+                <p>${message}</p>
+            `;
+            quizResult.hidden = false;
+            quizResult.scrollIntoView({ behavior: "smooth", block: "center" });
         });
 
-        if (unanswered > 0) {
-            showToast(
-                "Responda às " + unanswered +
-                " questão(ões) restantes antes de corrigir."
-            );
-            return;
-        }
-
-        let message;
-
-        if (score >= 8) {
-            message = "Excelente! Você compreendeu bem o conteúdo.";
-        } else if (score >= 5) {
-            message = "Bom trabalho! Revise os tópicos e tente novamente.";
-        } else {
-            message = "Continue estudando e tente novamente após a revisão.";
-        }
-
-        quizResult.innerHTML = `
-            <h3>Resultado: ${score} de 10</h3>
-            <p>${message}</p>
-        `;
-
-        quizResult.hidden = false;
-
-        quizResult.scrollIntoView({
-            behavior: "smooth",
-            block: "center"
+        quizForm.addEventListener("reset", function () {
+            quizResult.hidden = true;
+            quizResult.innerHTML = "";
         });
-    });
-
-    quizForm.addEventListener("reset", function () {
-        quizResult.hidden = true;
-    });
+    }
 
     // ANO AUTOMÁTICO NO RODAPÉ
     document.getElementById("currentYear").textContent =
