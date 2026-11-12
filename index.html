@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#172b3c">
     <title>Portal Educativo | Resistores e Lei de Ohm</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js" defer></script>
 </head>
 <body>
@@ -19,6 +19,13 @@
             <small>Conhecimento em um só lugar</small>
         </span>
     </a>
+
+    <nav class="header-nav" aria-label="Navegação do portal">
+        <a href="#inicio">Início</a>
+        <a href="#assuntos">Assuntos</a>
+        <a href="#quiz">Quiz</a>
+        <a href="#referencias">Referências</a>
+    </nav>
 
     <form class="search-form" id="searchForm" role="search">
         <input
@@ -93,7 +100,7 @@
             </div>
         </section>
 
-        <div class="content-heading">
+        <div class="content-heading" id="assuntos">
             <div>
                 <span class="eyebrow">CONTEÚDO COMPLETO</span>
                 <h2>Guia de estudos</h2>
@@ -511,6 +518,13 @@
 
         </div>
 
+        <section class="study-section" id="referencias" aria-labelledby="titulo-referencias">
+            <span class="section-number">REF</span>
+            <h2 id="titulo-referencias">Referências</h2>
+            <p>As fontes de pesquisa e os créditos das imagens utilizadas neste conteúdo devem ser registrados aqui pela dupla.</p>
+            <p>Consulte também o arquivo <code>docs/referencias.md</code> para a lista completa de fontes, autores, links e datas de acesso.</p>
+        </section>
+
         <div class="page-bottom">
             <span>Portal Educativo · Material de estudo</span>
             <button id="backTop">Voltar ao topo ↑</button>
@@ -539,6 +553,7 @@
             <a href="#lei2">Segunda Lei de Ohm</a>
             <a href="#exemplos">Exemplos práticos</a>
             <a href="#quiz">Quiz de revisão</a>
+            <a href="#referencias">Referências</a>
         </div>
 
         <div>
